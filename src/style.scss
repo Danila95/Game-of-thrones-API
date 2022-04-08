@@ -1,0 +1,21 @@
+// common.blocks
+
+// block common
+@import "~normalize.css";
+@import "components/common.components/common/libs/bootstrap@5.0.2/bootstrap.min.css";
+@import "fonts/@fortawesome/fontawesome-free/css/all.min.css";
+@import "components/common.components/common/colors";
+@import "components/common.components/common/fonts";
+@import "components/common.components/common/main";
+// block app
+@import "components/common.components/app/app";
+// block start-react
+@import "components/start-react/start-react";
+// block recipe
+@import "components/recipes/recipes";
+
+// desktop.blocks
+@import "components/desktop.components/common/media";
+
+// touch.blocks
+@import "components/touch.components/common/media";
