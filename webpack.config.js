@@ -89,6 +89,14 @@ const plugins = () => {
           from: path.resolve(__dirname, "./src/favicon.ico"),
           to: path.resolve(__dirname, "prod"),
         },
+        {
+          from: path.resolve(__dirname, "./src/resources/videos"),
+          to: path.resolve(__dirname, "prod/resources/videos"),
+        },
+        {
+          from: path.resolve(__dirname, "./src/resources/audio"),
+          to: path.resolve(__dirname, "prod/resources/audio"),
+        },
       ],
     }),
     isProd
