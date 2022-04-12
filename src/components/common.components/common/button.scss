@@ -17,12 +17,12 @@
 	}
 	.inner {
 		position: relative;
-		background-color: $main-color;
+		background-color: $blue-1;
 		line-height: 18px;
 		padding: 0 18px;
 		transition: none;
 		&::before {
-			border-color: $main-color transparent;
+			border-color: $blue-1 transparent;
 			border-style: solid;
 			border-width: 0 0 10px 10px;
 			content: "";
@@ -33,7 +33,7 @@
 			transition: none;
 		}
 		&::after {
-			border-color: $main-color transparent;
+			border-color: $blue-1 transparent;
 			border-style: solid;
 			border-width: 0 0 10px 10px;
 			content: "";
@@ -52,13 +52,13 @@
 	}
 	&__secondary {
 		.inner {
-			background-color: $grey;
+			background-color: $brown-1;
 			&::before {
-				border-color: $grey transparent;
+				border-color: $brown-1 transparent;
 				transition: none;
 			}
 			&::after {
-				border-color: $grey transparent; 
+				border-color: $brown-1 transparent; 
 				transition: none;
 			}
 		}
@@ -78,10 +78,10 @@
 		transition: none;
 	}
 	&.button__main::before, &.button__main::after {
-		background-color: $main-color;
+		background-color: $blue-1;
 	}
 	&.button__secondary::before, &.button__secondary::after {
-		background-color: $grey;
+		background-color: $brown-1;
 	}
 	&:hover {
 		transform: translateY(-5px);

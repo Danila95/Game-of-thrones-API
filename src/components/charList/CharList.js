@@ -1,45 +1,45 @@
 import './charList.scss';
-import abyss from '../../images/abyss.jpg';
+import daenerys from '../../images/daenerys.jpg';
 
 const CharList = () => {
 	return (
 		<div className="char__list">
 			<ul className="char__grid">
 				<li className="char__item">
-					<img src={abyss} alt="abyss"/>
-					<div className="char__name">Abyss</div>
+					<img src={daenerys} alt="abyss"/>
+					<div className="char__name">Daenerys Targaryen</div>
 				</li>
 				<li className="char__item char__item_selected">
-					<img src={abyss} alt="abyss"/>
-					<div className="char__name">Abyss</div>
+					<img src={daenerys} alt="abyss"/>
+					<div className="char__name">Daenerys Targaryen</div>
 				</li>
 				<li className="char__item">
-					<img src={abyss} alt="abyss"/>
-					<div className="char__name">Abyss</div>
+					<img src={daenerys} alt="abyss"/>
+					<div className="char__name">Daenerys Targaryen</div>
 				</li>
 				<li className="char__item">
-					<img src={abyss} alt="abyss"/>
-					<div className="char__name">Abyss</div>
+					<img src={daenerys} alt="abyss"/>
+					<div className="char__name">Daenerys Targaryen</div>
 				</li>
 				<li className="char__item">
-					<img src={abyss} alt="abyss"/>
-					<div className="char__name">Abyss</div>
+					<img src={daenerys} alt="abyss"/>
+					<div className="char__name">Daenerys Targaryen</div>
 				</li>
 				<li className="char__item">
-					<img src={abyss} alt="abyss"/>
-					<div className="char__name">Abyss</div>
+					<img src={daenerys} alt="abyss"/>
+					<div className="char__name">Daenerys Targaryen</div>
 				</li>
 				<li className="char__item">
-					<img src={abyss} alt="abyss"/>
-					<div className="char__name">Abyss</div>
+					<img src={daenerys} alt="abyss"/>
+					<div className="char__name">Daenerys Targaryen</div>
 				</li>
 				<li className="char__item">
-					<img src={abyss} alt="abyss"/>
-					<div className="char__name">Abyss</div>
+					<img src={daenerys} alt="abyss"/>
+					<div className="char__name">Daenerys Targaryen</div>
 				</li>
 				<li className="char__item">
-					<img src={abyss} alt="abyss"/>
-					<div className="char__name">Abyss</div>
+					<img src={daenerys} alt="abyss"/>
+					<div className="char__name">Daenerys Targaryen</div>
 				</li>
 			</ul>
 			<button className="button button__main button__long">

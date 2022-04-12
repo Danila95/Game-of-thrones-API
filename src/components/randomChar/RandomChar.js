@@ -1,16 +1,16 @@
 import './randomChar.scss';
-import thor from '../../images/thor.jpeg';
+import jonSnow from '../../images/jon-snow.jpg';
 import mjolnir from '../../images/mjolnir.png';
 
 const RandomChar = () => {
 	return (
 		<div className="randomchar">
 			<div className="randomchar__block">
-				<img src={thor} alt="Random character" className="randomchar__img"/>
+				<img src={jonSnow} alt="Random character" className="randomchar__img"/>
 				<div className="randomchar__info">
-					<p className="randomchar__name">Thor</p>
+					<p className="randomchar__name">Jon Snow</p>
 					<p className="randomchar__descr">
-						As the Norse God of thunder and lightning, Thor wields one of the greatest weapons ever made, the enchanted hammer Mjolnir. While others have described Thor as an over-muscled, oafish imbecile, he's quite smart and compassionate...
+						Lord Commander of the Night's Watch
 					</p>
 					<div className="randomchar__btns">
 						<a href="#" className="button button__main">

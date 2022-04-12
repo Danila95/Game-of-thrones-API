@@ -1,4 +1,4 @@
-// @import "../common.components/common/colors";
+@import "../common.components/common/colors";
 
 .char {
 	&__info {
@@ -7,6 +7,8 @@
 		position: relative;
 		z-index: 5;
 		background-color: #fff;
+		color: black !important;
+		opacity: 0.85;
 		&-name {
 			font-weight: bold;
 			font-size: 22px;

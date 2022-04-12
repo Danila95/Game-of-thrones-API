@@ -3,7 +3,7 @@ import RandomChar from "../../randomChar/RandomChar";
 import CharList from "../../charList/CharList";
 import CharInfo from "../../charInfo/CharInfo";
 
-import decoration from '../../../images/vision.png';
+import decoration from '../../../images/ned-stark.png';
 
 const App = () => {
 
@@ -33,9 +33,9 @@ const App = () => {
 				<source src="resources/videos/background-video.webm" type="video/webm"></source>
 				<source src="resources/videos/background-video.mp4" type="video/mp4"></source>
 			</video>
-			<audio autoPlay loop id="myAudio">
+			{/* <audio autoPlay loop id="myAudio">
 				<source src="resources/audio/main-theme-got.mp3" type="audio/mp3"></source>
-			</audio>
+			</audio> */}
 		</div>
 	)
 };

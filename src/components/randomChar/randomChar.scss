@@ -9,6 +9,8 @@
 		display: grid;
 		grid-template-columns: 180px auto;
 		column-gap: 30px;
+		background: $grey-1;
+		opacity: 0.85;
 	}
 	&__img {
 		width: 180px;
@@ -39,6 +41,7 @@
 	&__static {
 		padding: 40px 35px;
 		background-color: $dark;
+		opacity: 0.85;
 		position: relative;
 		button {
 			margin-top: 13px;
