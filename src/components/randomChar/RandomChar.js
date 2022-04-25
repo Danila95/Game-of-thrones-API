@@ -1,6 +1,6 @@
 import './randomChar.scss';
 import jonSnow from '../../images/jon-snow.jpg';
-import mjolnir from '../../images/mjolnir.png';
+import arms from '../../images/arms.png';
 
 const RandomChar = () => {
 	return (
@@ -33,7 +33,7 @@ const RandomChar = () => {
 				<button className="button button__main">
 					<div className="inner">try it</div>
 				</button>
-				<img src={mjolnir} alt="mjolnir" className="randomchar__decoration"/>
+				<img src={arms} alt="arms" className="randomchar__decoration"/>
 			</div>
 		</div>
 	)
