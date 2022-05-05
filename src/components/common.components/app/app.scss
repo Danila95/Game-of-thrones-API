@@ -9,7 +9,7 @@
     
     .full-screen__body {
         padding: 50px 15px;
-        background-color: rgba(0, 0, 0, 0.150);
+        background-color: rgba(0, 0, 0, 0.250);
         position: relative;
         z-index: 2;
         display: flex;
@@ -17,6 +17,8 @@
         justify-content: center;
         align-items: center;
         flex-direction: column;
+        animation-duration: 2s;
+		animation-name: blackout; 
     }
     
     .full-screen__title {
@@ -47,4 +49,33 @@
         background: #ddd;
         color: black;
     }
+
+    main {
+        animation-duration: 4s;
+		animation-name: uprise; 
+    }
+}
+
+@keyframes uprise {
+	from {
+		opacity: 0;
+	}
+
+	to {
+		opacity: 1;
+	}
+
+	50% {
+		opacity: 0;
+	  }
+  }
+
+@keyframes blackout {
+    from {
+		background-color: rgba(0, 0, 0, 0);
+	}
+
+	to {
+		background-color: rgba(0, 0, 0, 0.250);
+	}
 }
