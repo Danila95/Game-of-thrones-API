@@ -8,7 +8,7 @@ const RandomChar = () => {
 			<div className="randomchar__block">
 				<img src={jonSnow} alt="Random character" className="randomchar__img"/>
 				<div className="randomchar__info">
-					<p className="randomchar__name">Jon Snow</p>
+					<p className="randomchar__name">John Snow</p>
 					<p className="randomchar__descr">
 						Lord Commander of the Night's Watch
 					</p>

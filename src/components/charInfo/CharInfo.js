@@ -7,7 +7,7 @@ const CharInfo = () => {
 			<div className="char__basics">
 				<img src={jonSnow} alt="abyss"/>
 				<div>
-					<div className="char__info-name">Jon Snow</div>
+					<div className="char__info-name">John Snow</div>
 					<div className="char__btns">
 						<a href="#" className="button button__main">
 							<div className="inner">homepage</div>
