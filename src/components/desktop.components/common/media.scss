@@ -1,75 +1,99 @@
 @media screen and (max-width: 1464px) {
-    .app {
-        width: 1080px !important;
-    }
+	.app {
+		width: 1080px !important;
+	}
 }
 
 @media screen and (max-width: 1444px) {
-    .app {
-        width: 1000px !important;
-    }
-    .char__content {
-        grid-template-columns: 63% 34.5% !important;
-    }
-    .randomchar__btns {
-        display: flex;
-    }
+	.app {
+		width: 1000px !important;
+	}
+	.char__content {
+		grid-template-columns: 63% 34.5% !important;
+	}
+	.randomchar__btns {
+		display: flex;
+	}
 }
 
 @media screen and (max-width: 1364px) {
-    .app {
-        width: 900px !important;
-    }
-    .char__content {
-        grid-template-columns: 58% 42% !important;
-        column-gap: 5px;
-    }
-    .randomchar__btns {
-        flex-direction: column;
-        justify-content: center;
-    }
-    .randomchar__btns a:nth-child(1) {
-        margin-right: 0px !important; 
-    }
-    .randomchar__btns .button__main {
-        margin-bottom: 10px !important;
-    }
-    .char__grid {
-        grid-template-columns: repeat(2, 50%);
-        column-gap: 0px;
+	.app {
+		width: 900px !important;
+	}
+	.char__content {
+		grid-template-columns: 58% 42% !important;
+		column-gap: 5px;
+	}
+	.randomchar__btns {
+		flex-direction: column;
+		justify-content: center;
+	}
+	.randomchar__btns a:nth-child(1) {
+		margin-right: 0px !important; 
+	}
+	.randomchar__btns .button__main {
+		margin-bottom: 10px !important;
+	}
+	.char__grid {
+		grid-template-columns: repeat(2, 50%);
+		column-gap: 0px;
 		row-gap: 10px;
-    }
-    .char__basics {
-        grid-template-columns: 133px auto;
-    }
-    .char__btns {
-        display: flex;
-        flex-direction: column;
-    }
-    .full-screen__body {
-        overflow: hidden;
-    }
+	}
+	.char__basics {
+		grid-template-columns: 133px auto;
+	}
+	.char__btns {
+		display: flex;
+		flex-direction: column;
+	}
 }
 
 @media screen and (max-width: 1264px) {
-    .app {
-        width: 800px !important;
-        margin: 0 20px;
-    }
-    .randomchar__decoration {
-        height: 120px;
-        width: 120px;
-    }
-    .char__basics {
-        grid-template-columns: repeat(1, 100%);
-    }
-    .char__basics img {
-        justify-self: center;
-    }
-    .char__basics div {
-        justify-self: center;
-    }
-    .char__content {
-        grid-template-columns: 61% 39% !important;
-    }
+	.app {
+		width: 800px !important;
+		margin: 0 20px;
+	}
+	.randomchar__decoration {
+		height: 120px;
+		width: 120px;
+	}
+	.char__basics {
+		grid-template-columns: repeat(1, 100%);
+	}
+	.char__basics img {
+		justify-self: center;
+	}
+	.char__basics div {
+		justify-self: center;
+	}
+	.char__content {
+		grid-template-columns: 61% 39% !important;
+	}
+	.randomchar__descr {
+		font-size: 12px;
+	}
+	.app__title {
+		font-size: 16px;
+	}
+	.app__menu ul {
+		font-size: 16px;
+	}
+	.randomchar__name {
+		font-size: 16px;
+	}
+	.randomchar__title {
+		font-size: 14px;
+	}
+	.char__name {
+		font-size: 14px;
+	}
+	.char__info-name {
+		font-size: 16px;
+	}
+	.char__descr {
+		font-size: 12px;
+	}
+	li.char__comics-item {
+		font-size: 12px;
+	}
 }
