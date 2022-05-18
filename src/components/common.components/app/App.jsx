@@ -102,9 +102,9 @@ const App = () => {
 				<source src="resources/videos/background-video.webm" type="video/mp4"></source>
 				<source src="resources/videos/background-video.mp4" type="video/mp4"></source>
 			</video>
-			<audio ref={audioRef} autoPlay loop id="myAudio">
+			{/* <audio ref={audioRef} autoPlay loop id="myAudio">
 				<source src="resources/audio/main-theme-got.mp3" type="audio/mp3"></source>
-			</audio>
+			</audio> */}
 		</div>
 	)
 };

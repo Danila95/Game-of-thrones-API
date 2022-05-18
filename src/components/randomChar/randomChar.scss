@@ -32,6 +32,11 @@
 	&__descr {
 		font-size: 14px;
 		line-height: 18px;
+		display: flex;
+		flex-direction: column;
+		span {
+			margin-bottom: 10px;
+		}
 	}
 	&__btns {
 		a:nth-child(1) {

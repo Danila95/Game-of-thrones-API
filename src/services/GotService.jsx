@@ -11,12 +11,27 @@ class GotService {
         return await res.json();
     }
 
-    getAllCharacters = () => {
-        return this.getResource(`${this._apiURL}`);
+    getAllCharacters = async () => {
+        const res = await this.getResource(`${this._apiURL}`);
+        return res.map(this._transformCharacter);
     }
 
-    getCharacter = (id) => {
-        return this.getResource(`${this._apiURL}/${id}`);
+    getCharacter = async (id) => {
+        const res = await this.getResource(`${this._apiURL}/${id}`);
+        return this._transformCharacter(res);
+    }
+
+    _transformCharacter = (char) => {
+        return {
+            id: char.id,
+            firstName: char.firstName,
+            lastName: char.lastName,
+            fullName: char.fullName,
+            title: char.title,
+            family: char.family,
+            image: char.image,
+            imageUrl: char.imageUrl
+        }
     }
 }
 
