@@ -11,8 +11,16 @@ class GotService {
         return await res.json();
     }
 
-    getAllCharacters = async () => {
-        const res = await this.getResource(`${this._apiURL}`);
+    getAllCharacters = async (offset = 9) => {
+        let res = await this.getResource(`${this._apiURL}`);
+        const temp = []; // временный массив
+        let count = offset;
+        if (count > 53) // страховка от дырок в массиве
+            count = 53;
+        for (let i = 0; i < count; i++) {
+            temp.push(res[i]);
+        }
+        res = temp;
         return res.map(this._transformCharacter);
     }
 

@@ -1,52 +1,109 @@
-import './charList.scss';
-import daenerys from '../../images/daenerys.jpg';
+import {Component} from 'react';
 
-const CharList = () => {
-	return (
-		<div className="char__list">
+import './charList.scss';
+import GotService from "../../services/GotService";
+import Spinner from '../spinner/Spinner';
+import ErrorMessage from '../errorMessage/errorMessage';
+
+class CharList extends Component {
+
+	state = {
+		charList: [],
+		loading: true,
+		error: false,
+		newItemLoading: false,
+		offset: 9,
+		charEnded: false
+	}
+
+	gotService = new GotService();
+
+	componentDidMount() {
+		this.onRequest();
+	}
+
+	onRequest = (offset) => {
+		this.onCharListLoading();
+		this.gotService.getAllCharacters(offset)
+			.then(this.onCharListLoaded)
+			.catch(this.onError)
+	}
+
+	onCharListLoading = () => {
+		this.setState({
+			newItemLoading: true
+		})
+	}
+
+	onCharListLoaded = (newCharList) => {
+		let ended = false;
+		if (newCharList.length >= 53) {
+			ended = true;
+		}
+
+		this.setState(({offset}) => ({
+			charList: [ ...newCharList],
+			loading: false,
+			newItemLoading: false,
+			offset: offset + 9,
+			charEnded: ended
+
+		}))
+	}
+
+	onError = () => {
+		this.setState({
+			error: true,
+			loading: false
+		})
+	}
+
+	// Этот метод создан для оптимизации, 
+	// чтобы не помещать такую конструкцию в метод render
+	renderItems(arr) {
+		const items =  arr.map((item) => {
+			return (
+				<li 
+					className="char__item"
+					key={item.id}
+					onClick={() => this.props.onCharSelected(item.id)}>
+						<img src={item.imageUrl} alt={item.fullName} />
+						<div className="char__name">{item.fullName}</div>
+				</li>
+			)
+		});
+		// А эта конструкция вынесена для центровки спиннера/ошибки
+		return (
 			<ul className="char__grid">
-				<li className="char__item">
-					<img src={daenerys} alt="abyss"/>
-					<div className="char__name">Daenerys Targaryen</div>
-				</li>
-				<li className="char__item char__item_selected">
-					<img src={daenerys} alt="abyss"/>
-					<div className="char__name">Daenerys Targaryen</div>
-				</li>
-				<li className="char__item">
-					<img src={daenerys} alt="abyss"/>
-					<div className="char__name">Daenerys Targaryen</div>
-				</li>
-				<li className="char__item">
-					<img src={daenerys} alt="abyss"/>
-					<div className="char__name">Daenerys Targaryen</div>
-				</li>
-				<li className="char__item">
-					<img src={daenerys} alt="abyss"/>
-					<div className="char__name">Daenerys Targaryen</div>
-				</li>
-				<li className="char__item">
-					<img src={daenerys} alt="abyss"/>
-					<div className="char__name">Daenerys Targaryen</div>
-				</li>
-				<li className="char__item">
-					<img src={daenerys} alt="abyss"/>
-					<div className="char__name">Daenerys Targaryen</div>
-				</li>
-				<li className="char__item">
-					<img src={daenerys} alt="abyss"/>
-					<div className="char__name">Daenerys Targaryen</div>
-				</li>
-				<li className="char__item">
-					<img src={daenerys} alt="abyss"/>
-					<div className="char__name">Daenerys Targaryen</div>
-				</li>
+				{items}
 			</ul>
-			<button className="button button__main button__long">
-				<div className="inner">load more</div>
-			</button>
-		</div>
-	)
+		)
+	}
+
+	render() {
+		
+		const {charList, loading, error, newItemLoading, offset, charEnded} = this.state;
+		const items = this.renderItems(charList);
+
+		const errorMessage = error ? <ErrorMessage/> : null;
+		const spinner = loading ? <Spinner/> : null;
+		const content = !(loading || error) ? items : null;
+
+		return (
+			<div className="char__list">
+				{errorMessage}
+				{spinner}
+				{content}
+				<button
+					className="button button__main button__long"
+					disabled={newItemLoading}
+					style={{'display': charEnded ? 'none' : 'block'}}
+					onClick={() => this.onRequest(offset)}>
+					<div className="inner">load more</div>
+				</button>
+			</div>
+		)
+	}
 }
 
 export default CharList;

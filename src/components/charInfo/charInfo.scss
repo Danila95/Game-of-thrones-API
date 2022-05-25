@@ -41,6 +41,11 @@
 		margin-top: 15px;
 		font-size: 14px;
 		line-height: 18px;
+		display: flex;
+		flex-direction: column;
+		span {
+			margin-bottom: 10px;
+		}
 	}
 	&__comics {
 		font-weight: bold;

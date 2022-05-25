@@ -11,7 +11,8 @@ class RandomChar extends Component {
 
 	state = {
 		char: {},
-		loading: true
+		loading: true,
+		error: false
 	};
 
 	gotService = new GotService();
@@ -28,6 +29,13 @@ class RandomChar extends Component {
 		});
 	}
 
+	onCharLoading = () => {
+        this.setState({
+            loading: true,
+            error: false
+        })
+    }
+
 	onError = () => {
 		this.setState({
 			loading: false,
@@ -36,6 +44,9 @@ class RandomChar extends Component {
 	}
 
 	updateChar = () => {
+		if (!this.state.error) {
+			this.onCharLoading();
+		}
 		const id = Math.floor(Math.random() * (53 - 1) + 1);
 		this.gotService
 			.getCharacter(id)
@@ -81,7 +92,7 @@ const View = ({char}) => {
 			<div className="randomchar__info">
 				<p className="randomchar__name">{fullName}</p>
 				<p className="randomchar__descr">
-					<span>Aliases:&nbsp;{title}</span>
+					<span>Title:&nbsp;{title}</span>
 					<span>Family:&nbsp;{family}</span>
 				</p>
 				<div className="randomchar__btns">
