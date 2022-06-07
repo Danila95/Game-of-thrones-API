@@ -1,9 +1,13 @@
 import {useState, useEffect, useRef} from 'react';
+import useSound from 'use-sound';
 
 import './charList.scss';
 import GotService from "../../services/GotService";
 import Spinner from '../spinner/Spinner';
 import ErrorMessage from '../errorMessage/errorMessage';
+import HoverButtonSound from '../hoverButtonSound/HoverButtonSound';
+
+const soundClickUrl = 'resources/audio/sounds/menu1.wav';
 
 const CharList = (props) => {
 
@@ -11,11 +15,13 @@ const CharList = (props) => {
 	const [loading, setLoading] = useState(true);
 	const [error, setError] = useState(false);
 	const [newItemLoading, setNewItemLoading] = useState(false);
-	const [offset, setOffset] = useState(210);
+	const [offset, setOffset] = useState(9);
 	const [charEnded, setCharEnded] = useState(false);
-	const [soundPlayingMenu2, setSoundPlayingMenu2] = useState(false);
 
-	const soundMenu2Ref = useRef(null);
+	const [playClick] = useSound(soundClickUrl, {
+		// playbackRate: 0.8,
+		volume: 0.5 
+	});
 
 	const gotService = new GotService();
 
@@ -28,12 +34,6 @@ const CharList = (props) => {
 		gotService.getAllCharacters(offset)
 			.then(onCharListLoaded)
 			.catch(onError)
-	}
-
-	const SoundMenu2 = () => {
-		soundMenu2Ref.current.pause();
-		soundMenu2Ref.current.play();
-		setSoundPlayingMenu2(true);
 	}
 
 	const onCharListLoading = () => {
@@ -60,36 +60,39 @@ const CharList = (props) => {
 
 	const itemRefs = useRef([]);
 
-    const focusOnItem = (id) => {
-        itemRefs.current.forEach(item => item.classList.remove('char__item_selected'));
-        itemRefs.current[id].classList.add('char__item_selected');
-        itemRefs.current[id].focus();
-    }
+	const focusOnItem = (id) => {
+		itemRefs.current.forEach(item => item.classList.remove('char__item_selected'));
+		itemRefs.current[id].classList.add('char__item_selected');
+		itemRefs.current[id].focus();
+	}
 
 	// Этот метод создан для оптимизации, 
 	// чтобы не помещать такую конструкцию в метод render
 	const renderItems = (arr) => {
+
 		const items =  arr.map((item, i) => {
 			return (
-				<li 
-					className="char__item"
-					tabIndex={0}
-                    ref={el => itemRefs.current[i] = el}
-					key={item.id}
-					onClick={() => {
-                        props.onCharSelected(item.id);
-                        focusOnItem(i);
-						SoundMenu2();
-                    }}
-					onKeyPress={(e) => {
-                        if (e.key === ' ' || e.key === "Enter") {
-                            props.onCharSelected(item.id);
-                            focusOnItem(i);
-                        }
-                    }}>
+				<HoverButtonSound key={item.id.toString()}>
+					<li 
+						className="char__item"
+						tabIndex={0}
+						ref={el => itemRefs.current[i] = el}
+						onClick={() => {
+							props.onCharSelected(item.id);
+							focusOnItem(i);
+							playClick();
+						}}
+						onKeyPress={(e) => {
+							if (e.key === ' ' || e.key === "Enter") {
+								props.onCharSelected(item.id);
+								focusOnItem(i);
+							}
+						}}
+					>
 						<img src={item.imageUrl} alt={item.fullName} />
 						<div className="char__name">{item.fullName}</div>
-				</li>
+					</li>
+				</HoverButtonSound>
 			)
 		});
 		// А эта конструкция вынесена для центровки спиннера/ошибки
@@ -98,9 +101,6 @@ const CharList = (props) => {
 				<ul className="char__grid">
 					{items}
 				</ul>
-				<audio ref={soundMenu2Ref} id="myAudio">
-					<source src="resources/audio/sounds/menu2.wav" type="audio/wav"></source>
-				</audio>
 			</>
 		)
 	}

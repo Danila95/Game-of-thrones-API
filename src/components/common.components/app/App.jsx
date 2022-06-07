@@ -7,6 +7,8 @@ import CharInfo from "../../charInfo/CharInfo";
 import decoration from '../../../images/ned-stark.png';
 import { FaPlay, FaPause, FaVolumeMute, FaVolumeUp } from 'react-icons/fa';
 
+const musicUrl = 'resources/audio/main-theme-got.mp3';
+
 
 const App = () => {
 
@@ -39,28 +41,18 @@ const App = () => {
 			pauseVideo();
 		}
 	};
-	
+
 	const startAudio = () => {
 		audioRef.current.pause();
 		setAudioPlaying(false);
 	}
 
-	// const startSoundMenu2 = () => {
-	// 	soundMenu2Ref.current.pause();
-	// 	setSoundPlayingMenu2(false);
-	// }
-	
 	const pauseAudio = () => {
 		audioRef.current.play();
 		setAudioPlaying(true);
 	}
 
-	// const pauseSoundMenu2 = () => {
-	// 	soundMenu2Ref.current.play();
-	// 	setSoundPlayingMenu2(true);
-	// }
-
-	const handleAudioPress = (e) => {
+	const handleMusicPress = (e) => {
 		e.preventDefault();
 		if (audioPlaying) {
 			startAudio();
@@ -88,7 +80,7 @@ const App = () => {
 								<a href="#" onClick={handleVideoPress}>
 									{ playing ? <FaPause size="20" /> : <FaPlay size="20" /> }
 								</a>
-								<a href="#" onClick={handleAudioPress}>
+								<a href="#" onClick={handleMusicPress}>
 									{ audioPlaying ? <FaVolumeUp size="20" /> : <FaVolumeMute size="20" /> }
 								</a>
 							</nav>
@@ -117,10 +109,7 @@ const App = () => {
 				<source src="resources/videos/background-video.mp4" type="video/mp4"></source>
 			</video>
 			{/* <audio ref={audioRef} autoPlay loop id="myAudio">
-				<source src="resources/audio/main-theme-got.mp3" type="audio/mp3"></source>
-			</audio> */}
-			{/* <audio ref={audioRef} id="myAudio">
-				<source src="resources/audio/sounds/menu2.wav" type="audio/wav"></source>
+				<source src={musicUrl} type="audio/mp3"></source>
 			</audio> */}
 		</div>
 	)
