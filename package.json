@@ -38,7 +38,7 @@
     "html-webpack-plugin": "^5.5.0",
     "imagemin-webpack-plugin": "^2.4.2",
     "mini-css-extract-plugin": "^2.4.3",
-    "optimize-css-assets-webpack-plugin": "^6.0.1",
+    "css-minimizer-webpack-plugin": "^5.0.0",
     "postcss": "^8.3.11",
     "postcss-loader": "^6.2.0",
     "postcss-preset-env": "^6.7.0",
