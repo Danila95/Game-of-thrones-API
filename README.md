@@ -50,9 +50,3 @@ enter command `npm install` or `yarn install` (if you use yarn) to install depen
 `netstat -ano | findstr :<PORT>` - Замените <PORT> с номером порта, который вы хотите использовать
 `taskkill /PID <PID> /F` - Команда убивает процесс
 https://coderoad.ru/39632667/%D0%9A%D0%B0%D0%BA-%D1%8F-%D0%BC%D0%BE%D0%B3%D1%83-%D1%83%D0%B1%D0%B8%D1%82%D1%8C-%D0%BF%D1%80%D0%BE%D1%86%D0%B5%D1%81%D1%81-%D0%B2-%D0%BD%D0%B0%D1%81%D1%82%D0%BE%D1%8F%D1%89%D0%B5%D0%B5-%D0%B2%D1%80%D0%B5%D0%BC%D1%8F-%D0%B8%D1%81%D0%BF%D0%BE%D0%BB%D1%8C%D0%B7%D1%83%D1%8E%D1%89%D0%B8%D0%B9-%D0%BF%D0%BE%D1%80%D1%82-%D0%BD%D0%B0-localhost-%D0%B2
-
-## БОНУС! плагин webpack-dashboard
-
-Этот плагин превращает интерфейс вашей консоли в конфетку)
-
- <img src="https://camo.githubusercontent.com/168acfe4997e36655568a8ae6a6c08eb65f25073a58cf560aeeae1eb91d3fcc8/687474703a2f2f692e696d6775722e636f6d2f714c3664584a642e706e67">
